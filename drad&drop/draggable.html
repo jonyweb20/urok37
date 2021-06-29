@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draggable</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <!--<link rel="stylesheet" href="jquery-ui-1.9.2.custom.min.css">-->
+    <style>
+        #container{
+            width: 700px;
+            height: 700px;
+            border: 2px solid green;
+            margin: 0 auto;
+        }
+        .container > .widget, .widget-2, .widget-3 {
+            width: 200px;
+            height: 200px;
+        }
+        .widget{
+            background-color: firebrick;
+        }
+        .widget-2{
+            background-color: #007fff;
+        }
+        .widget-3{
+            background-color: #777620;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="widget"></div>
+    <div class="widget-2"></div>
+    <div class="widget-3"></div>
+</div>
+<script>
+    $('#container > *').draggable({
+        containment: '#container', //ограничивает перемещение
+        // revert: true,
+        revertDuration: 1400, //время возвращения
+        cursor: 'move',
+        snap: '*', //будет происходить приливание ко всем элементам
+// grid:[40, 40], //
+        opacity: 0.4, //непрозрачность при перетаскивании
+        /*axis:'x'*/
+    })
+</script>
+</body>
+</html>
